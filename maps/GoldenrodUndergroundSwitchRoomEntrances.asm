@@ -174,6 +174,7 @@ UndergroundRivalBattleScript:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	loadtrainer RIVAL1, RIVAL1_4_TOTODILE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -183,6 +184,7 @@ UndergroundRivalBattleScript:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	loadtrainer RIVAL1, RIVAL1_4_CHIKORITA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -192,6 +194,7 @@ UndergroundRivalBattleScript:
 	winlosstext UndergroundRivalWinText, UndergroundRivalLossText
 	setlasttalked GOLDENRODUNDERGROUNDSWITCHROOMENTRANCES_RIVAL
 	loadtrainer RIVAL1, RIVAL1_4_CYNDAQUIL
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

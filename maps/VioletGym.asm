@@ -19,6 +19,7 @@ VioletGymFalknerScript:
 	closetext
 	winlosstext FalknerWinLossText, 0
 	loadtrainer FALKNER, FALKNER1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
@@ -44,11 +45,45 @@ VioletGymFalknerScript:
 	writetext FalknerTMMudSlapText
 	waitbutton
 	closetext
-	end
+	end 
 
 .SpeechAfterTM:
-	writetext FalknerFightDoneText
-	waitbutton
+    checkevent EVENT_BEAT_CHAMPION_LANCE
+    iftrue .OfferRematch
+; player hasn't beaten the champion yet
+    writetext FalknerFightDoneText
+    waitbutton
+    closetext
+    end
+	
+.OfferRematch:
+    writetext FalknerRematchText
+    yesorno
+    iftrue .DoRematch
+    ; keep going if false
+	
+.DontDoRematch:
+    writetext FalknerRematchRefuseText
+    waitbutton
+    closetext
+    end
+	
+.DoRematch:
+    writetext FalknerRematchAcceptText
+    waitbutton
+    closetext
+    winlosstext FalknerRematchLossText, 0
+    loadtrainer FALKNER, FALKNER2
+    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
+    startbattle
+    reloadmapafterbattle
+    setevent EVENT_BEAT_FALKNER
+    opentext
+    writetext FalknerRematchAfterText
+    waitbutton
+    closetext
+    end
+	
 .NoRoomForMudSlap:
 	closetext
 	end
@@ -152,11 +187,7 @@ ReceivedZephyrBadgeText:
 	done
 
 FalknerZephyrBadgeText:
-	text "ZEPHYRBADGE"
-	line "raises the attack"
-	cont "power of #MON."
-
-	para "It also enables"
+	text "It enables"
 	line "#MON to use"
 
 	para "FLASH, if they"
@@ -173,10 +204,13 @@ FalknerTMMudSlapText:
 	para "instantly learn a"
 	line "new move."
 
-	para "Think before you"
-	line "act--a TM can be"
-	cont "used only once."
-
+	para "You'd be wise"
+	line "to use it."
+	
+	para "A TM can"
+	line "be taught"
+	cont "infinitely."
+	
 	para "TM31 contains"
 	line "MUD-SLAP."
 
@@ -206,6 +240,54 @@ FalknerFightDoneText:
 	para "the greatest bird"
 	line "master!"
 	done
+	
+FalknerRematchText:
+    text "<PLAY_G>!"
+	line "Congratulations on"
+	cont "becoming champion."
+	
+	para "But you're not the"
+	line "only one who's been"
+	cont "flying high."
+	
+	para "I've worked hard"
+	line "since our last" 
+	cont "battle."
+	
+	para "Now my #MON"
+	line "are in top shape."
+	
+	para "How about" 
+	line "a rematch?"
+	done 
+
+FalknerRematchAcceptText:
+    text "I'll show you the"
+	line "real power of the"
+
+	para "magnificent bird"
+	line "#MON!"
+	done 
+
+FalknerRematchRefuseText:
+    text "I'll wait until"
+	line "you're ready."
+	done 
+	
+FalknerRematchLossText:
+    text "I understand…"
+	line "I'll bow out"
+	cont "gracefully."
+	done
+	
+FalknerRematchAfterText:
+    text "That was an"
+	line "intense battle!"
+	
+	para "We've fought hard,"
+	line "but you're as tough"
+	cont "as ever."
+	done 
 
 BirdKeeperRodSeenText:
 	text "The keyword is"

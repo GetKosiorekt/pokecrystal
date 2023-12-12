@@ -203,16 +203,16 @@ TeamRocketBaseB3FOathScript:
 	jumpstd TeamRocketOathScript
 
 TeamRocketBaseB3FProtein:
-	itemball PROTEIN
+	itemball LUCKY_EGG
 
 TeamRocketBaseB3FXSpecial:
-	itemball X_SPECIAL
+	itemball ESCAPE_ROPE
 
 TeamRocketBaseB3FFullHeal:
-	itemball FULL_HEAL
+	itemball HYPER_POTION
 
 TeamRocketBaseB3FIceHeal:
-	itemball ICE_HEAL
+	itemball FULL_HEAL
 
 TeamRocketBaseB3FUltraBall:
 	itemball ULTRA_BALL

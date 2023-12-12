@@ -120,7 +120,7 @@ PrintTempMonStats:
 	next "SPCL.DEF"
 	next "SPEED"
 	next "@"
-
+	
 GetGender:
 ; Return the gender of a given monster (wCurPartyMon/wCurOTMon/wCurWildMon).
 ; When calling this function, a should be set to an appropriate wMonType value.

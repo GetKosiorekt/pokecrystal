@@ -20,6 +20,7 @@ VermilionGymSurgeScript:
 	closetext
 	winlosstext LtSurgeWinLossText, 0
 	loadtrainer LT_SURGE, LT_SURGE1
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_LTSURGE
@@ -139,11 +140,7 @@ ReceivedThunderBadgeText:
 	done
 
 LtSurgeThunderBadgeText:
-	text "SURGE: THUNDER-"
-	line "BADGE increases"
-	cont "#MON's speed. "
-
-	para "Consider it proof"
+	text "Consider it proof"
 	line "that you defeated"
 
 	para "me. You wear it"

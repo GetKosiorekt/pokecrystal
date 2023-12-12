@@ -109,4 +109,7 @@ OverworldSprites:
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite TeamRocketSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite ArianaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite EusineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES

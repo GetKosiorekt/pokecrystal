@@ -63,6 +63,7 @@ VictoryRoadRivalNext:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
 	loadtrainer RIVAL1, RIVAL1_5_TOTODILE
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -72,6 +73,7 @@ VictoryRoadRivalNext:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
 	loadtrainer RIVAL1, RIVAL1_5_CHIKORITA
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -81,6 +83,7 @@ VictoryRoadRivalNext:
 	winlosstext VictoryRoadRivalDefeatText, VictoryRoadRivalVictoryText
 	setlasttalked VICTORYROAD_RIVAL
 	loadtrainer RIVAL1, RIVAL1_5_CYNDAQUIL
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

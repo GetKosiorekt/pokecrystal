@@ -96,6 +96,7 @@ RocketBaseBossFScript:
 	winlosstext RocketBaseBossWinText, 0
 	setlasttalked TEAMROCKETBASEB2F_ROCKET_GIRL
 	loadtrainer EXECUTIVEF, EXECUTIVEF_2
+	loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
 	startbattle
 	disappear TEAMROCKETBASEB2F_DRAGON
 	setevent EVENT_TEAM_ROCKET_BASE_B2F_EXECUTIVE
@@ -221,7 +222,7 @@ TrainerGruntM19:
 
 RocketElectrode1:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 47
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE1
@@ -239,7 +240,7 @@ RocketElectrode1:
 
 RocketElectrode2:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 47
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE2
@@ -257,7 +258,7 @@ RocketElectrode2:
 
 RocketElectrode3:
 	cry ELECTRODE
-	loadwildmon ELECTRODE, 23
+	loadwildmon ELECTRODE, 47
 	startbattle
 	iftrue TeamRocketBaseB2FReloadMap
 	disappear TEAMROCKETBASEB2F_ELECTRODE3

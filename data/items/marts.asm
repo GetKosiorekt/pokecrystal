@@ -82,12 +82,17 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
-	db POTION
-	db SUPER_POTION
+	db 10 ; # items
 	db HYPER_POTION
-	db FULL_HEAL
-	db REVIVE
+	db BITTER_BERRY
+	db BURNT_BERRY
+	db GOLD_BERRY
+	db ICE_BERRY
+	db MINT_BERRY
+	db MIRACLEBERRY
+	db MYSTERYBERRY
+	db PSNCUREBERRY
+	db PRZCUREBERRY
 	db -1 ; end
 
 MartGoldenrod2F1:
@@ -114,23 +119,21 @@ MartGoldenrod2F2:
 	db -1 ; end
 
 MartGoldenrod3F:
-	db 7 ; # items
-	db X_SPEED
-	db X_SPECIAL
-	db X_DEFEND
-	db X_ATTACK
-	db DIRE_HIT
-	db GUARD_SPEC
-	db X_ACCURACY
+	db 4 ; # items
+	db HEAL_POWDER
+	db ENERGY_ROOT
+	db ENERGYPOWDER
+	db REVIVAL_HERB
 	db -1 ; end
 
 MartGoldenrod4F:
-	db 5 ; # items
-	db PROTEIN
-	db IRON
-	db CARBOS
-	db CALCIUM
-	db HP_UP
+	db 6 ; # items
+	db WATER_STONE
+	db THUNDERSTONE
+	db FIRE_STONE
+	db LEAF_STONE
+	db MOON_STONE
+	db SUN_STONE
 	db -1 ; end
 
 MartGoldenrod5F1:
@@ -394,10 +397,9 @@ MartIndigoPlateau:
 
 MartUnderground:
 	db 4 ; # items
-	db ENERGYPOWDER
-	db ENERGY_ROOT
-	db HEAL_POWDER
-	db REVIVAL_HERB
+	db TM_STEEL_WING
+	db TM_PROTECT
+	db TM_SUNNY_DAY
 	db -1 ; end
 
 DefaultMart:

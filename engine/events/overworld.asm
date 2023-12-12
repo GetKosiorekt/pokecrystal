@@ -961,7 +961,7 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MINERALBADGE
 	call CheckBadge
 	jr c, .Failed
 	jr .UseStrength
@@ -1058,7 +1058,7 @@ TryStrengthOW:
 	call CheckPartyMove
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MINERALBADGE
 	call CheckEngineFlag
 	jr c, .nope
 

@@ -116,7 +116,7 @@ TinTower1FSuicuneBattleScript:
 	applymovement TINTOWER1F_SUICUNE, TinTower1FSuicuneApproachesMovement
 	cry SUICUNE
 	pause 20
-	loadwildmon SUICUNE, 40
+	loadwildmon SUICUNE, 62
 	loadvar VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	dontrestartmapmusic
@@ -130,6 +130,8 @@ TinTower1FSuicuneBattleScript:
 	setmapscene CIANWOOD_CITY, SCENE_CIANWOODCITY_NOOP
 	setscene SCENE_TINTOWER1F_NOOP
 	clearevent EVENT_SET_WHEN_FOUGHT_HO_OH
+	setevent EVENT_BLACKTHORN_CITY_SUPER_NERD_BLOCKS_GYM
+    clearevent EVENT_BLACKTHORN_CITY_SUPER_NERD_DOES_NOT_BLOCK_GYM
 	reloadmapafterbattle
 	pause 20
 	turnobject PLAYER, DOWN

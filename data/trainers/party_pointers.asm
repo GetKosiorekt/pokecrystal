@@ -70,4 +70,5 @@ TrainerGroups:
 	dw OfficerGroup
 	dw GruntFGroup
 	dw MysticalmanGroup
+	dw TeamRocketGroup
 	assert_table_length NUM_TRAINER_CLASSES

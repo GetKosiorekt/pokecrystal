@@ -4,16 +4,16 @@ KantoWaterWildMons:
 
 	def_water_wildmons TOHJO_FALLS
 	db 4 percent ; encounter rate
-	db 20, GOLDEEN
-	db 20, SLOWPOKE
-	db 20, SEAKING
+	db 36, SEAKING
+	db 36, SLOWBRO
+	db 36, QUAGSIRE
 	end_water_wildmons
 
 	def_water_wildmons VERMILION_PORT
 	db 2 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	db 65, TENTACRUEL
+	db 65, SEAKING
+	db 65, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_4
@@ -109,9 +109,9 @@ KantoWaterWildMons:
 
 	def_water_wildmons ROUTE_27
 	db 6 percent ; encounter rate
-	db 20, TENTACOOL
-	db 15, TENTACOOL
-	db 20, TENTACRUEL
+	db 35, TENTACRUEL
+	db 35, MANTINE
+	db 35, QWILFISH
 	end_water_wildmons
 
 	def_water_wildmons ROUTE_28
@@ -144,9 +144,9 @@ KantoWaterWildMons:
 
 	def_water_wildmons VERMILION_CITY
 	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
+	db 65, TENTACRUEL
+	db 65, SEAKING
+	db 65, LANTURN
 	end_water_wildmons
 
 	def_water_wildmons CELADON_CITY

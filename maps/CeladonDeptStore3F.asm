@@ -53,8 +53,11 @@ CeladonDeptStore3FYoungsterText:
 
 	para "should use this TM"
 	line "on…"
+	
+	para "Thankfully, TM'S"
+	line "are reuseable!"
 	done
-
+	
 CeladonDeptStore3FGameboyKid1Text:
 	text "Uh-oh! I traded my"
 	line "#MON without"
