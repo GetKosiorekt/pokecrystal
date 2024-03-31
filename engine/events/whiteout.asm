@@ -3,7 +3,7 @@ Script_BattleWhiteout::
 	sjump Script_Whiteout
 
 OverworldWhiteoutScript::
-	refreshscreen
+	reanchormap
 	callasm OverworldBGMap
 
 Script_Whiteout:
@@ -22,7 +22,7 @@ Script_Whiteout:
 	writetext .WhitedOutText
 .text_done
 	waitbutton
-	special FadeOutPalettes
+	special FadeOutToWhite
 	pause 40
 	special HealParty
 	callasm GetWhiteoutSpawn
@@ -62,7 +62,7 @@ OverworldBGMap:
 BattleBGMap:
 	ld b, SCGB_BATTLE_GRAYSCALE
 	call GetSGBLayout
-	call SetPalettes
+	call SetDefaultBGPAndOBP
 	ret
 
 LoseWhiteOutMoney:
