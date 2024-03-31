@@ -24,7 +24,7 @@ INCBIN "gfx/trainers/cal.gbcpal", middle_colors
 INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
 INCBIN "gfx/trainers/karen.gbcpal", middle_colors
 INCBIN "gfx/trainers/koga.gbcpal", middle_colors
-INCBIN "gfx/trainers/lance.gbcpal", middle_colors
+INCBIN "gfx/trainers/champion.gbcpal", middle_colors
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
 INCBIN "gfx/trainers/lt_surge.gbcpal", middle_colors
@@ -77,12 +77,5 @@ INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors
 INCBIN "gfx/trainers/team_rocket.gbcpal", middle_colors
-INCBIN "gfx/trainers/giovanni.gbcpal", middle_colors
-INCBIN "gfx/trainers/agatha.gbcpal", middle_colors
-INCBIN "gfx/trainers/lorelei.gbcpal", middle_colors
-INCBIN "gfx/trainers/oak.gbcpal", middle_colors
-INCBIN "gfx/trainers/proton.gbcpal", middle_colors
-INCBIN "gfx/trainers/petrel.gbcpal", middle_colors
-INCBIN "gfx/trainers/elder.gbcpal", middle_colors 
 
 	assert_table_length NUM_TRAINER_CLASSES + 1

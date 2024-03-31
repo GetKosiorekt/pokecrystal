@@ -225,7 +225,7 @@ FirebreatherPic:     INCBIN "gfx/trainers/firebreather.2bpp.lz"
 MachopFrontpic:      INCBIN "gfx/pokemon/machop/front.animated.2bpp.lz"
 ChinchouFrontpic:    INCBIN "gfx/pokemon/chinchou/front.animated.2bpp.lz"
 RattataFrontpic:     INCBIN "gfx/pokemon/rattata/front.animated.2bpp.lz"
-LancePic:            INCBIN "gfx/trainers/lance.2bpp.lz"
+ChampionPic:         INCBIN "gfx/trainers/champion.2bpp.lz"
 SpearowFrontpic:     INCBIN "gfx/pokemon/spearow/front.animated.2bpp.lz"
 MagikarpFrontpic:    INCBIN "gfx/pokemon/magikarp/front.animated.2bpp.lz"
 CharmanderFrontpic:  INCBIN "gfx/pokemon/charmander/front.animated.2bpp.lz"
@@ -414,9 +414,10 @@ PoliwrathBackpic:    INCBIN "gfx/pokemon/poliwrath/back.2bpp.lz"
 SwimmermPic:         INCBIN "gfx/trainers/swimmer_m.2bpp.lz"
 SunkernFrontpic:     INCBIN "gfx/pokemon/sunkern/front.animated.2bpp.lz"
 NidorinoBackpic:     INCBIN "gfx/pokemon/nidorino/back.2bpp.lz"
+MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
 CooltrainerfPic:     INCBIN "gfx/trainers/cooltrainer_f.2bpp.lz"
 ElectrodeFrontpic:   INCBIN "gfx/pokemon/electrode/front.animated.2bpp.lz"
-MysticalmanPic:      INCBIN "gfx/trainers/mysticalman.2bpp.lz"
+
 
 SECTION "Pics 14", ROMX
 
@@ -711,13 +712,6 @@ SECTION "Pics 19", ROMX
 
 TeamRocketPic:       INCBIN "gfx/trainers/team_rocket.2bpp.lz"
 OmastarBackpic:      INCBIN "gfx/pokemon/omastar/back.2bpp.lz"
-GiovanniPic:         INCBIN "gfx/trainers/giovanni.2bpp.lz"
-AgathaPic:           INCBIN "gfx/trainers/agatha.2bpp.lz"
-LoreleiPic:          INCBIN "gfx/trainers/lorelei.2bpp.lz"
-OakPic:              INCBIN "gfx/trainers/oak.2bpp.lz"
-ProtonPic:           INCBIN "gfx/trainers/proton.2bpp.lz"
-PetrelPic:           INCBIN "gfx/trainers/petrel.2bpp.lz"
-ElderPic:            INCBIN "gfx/trainers/elder.2bpp.lz" 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).

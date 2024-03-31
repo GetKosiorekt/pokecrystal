@@ -2,24 +2,24 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	table_width 2, TrainerClassDVs
 	;  atk,def,spd,spc
-	dn 10, 10, 13, 12 ; FALKNER
-	dn 12, 11, 11, 10 ; WHITNEY
-	dn 10,  9, 11, 10 ; BUGSY
-	dn 11, 11, 11, 13 ; MORTY
-	dn 14, 12, 12, 14 ; PRYCE
-	dn 11, 13, 12, 12 ; JASMINE
-	dn 13, 10, 13, 11 ; CHUCK
-	dn 14, 15, 12, 12 ; CLAIR
+	dn  9, 10,  7,  7 ; FALKNER
+	dn  8,  8,  8,  8 ; WHITNEY
+	dn  9,  8,  8,  8 ; BUGSY
+	dn  9,  8,  8,  8 ; MORTY
+	dn  9,  8,  8,  8 ; PRYCE
+	dn  9,  8,  8,  8 ; JASMINE
+	dn  9,  8,  8,  8 ; CHUCK
+	dn  7, 12, 13, 13 ; CLAIR
 	dn 15, 13, 13, 13 ; RIVAL1
 	dn 13, 11, 13, 11 ; POKEMON_PROF
-	dn 14, 12, 15, 15 ; WILL
-	dn 15, 15, 15, 15 ; CAL
-	dn 15, 15, 13, 13 ; BRUNO
-	dn 15, 13, 15, 15 ; KAREN
-	dn 15, 15, 13, 13 ; KOGA
-	dn 15, 15, 15, 15 ; LANCE
-	dn 14, 15, 13, 14 ; BROCK
-	dn 12, 13, 15, 15 ; MISTY
+	dn 13, 12, 13, 13 ; WILL
+	dn 13, 12, 13, 13 ; CAL
+	dn 13, 12, 13, 13 ; BRUNO
+	dn  7, 15, 13, 15 ; KAREN
+	dn 13, 12, 13, 13 ; KOGA
+	dn 15, 15, 15, 15 ; CHAMPION
+	dn  9,  8,  8,  8 ; BROCK
+	dn  7,  8,  8,  8 ; MISTY
 	dn 15, 13, 15, 13 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
 	dn 13, 12, 15, 15 ; ERIKA
@@ -27,7 +27,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
 	dn  5,  8,  8,  8 ; LASS
-	dn 14, 13, 13, 14 ; JANINE
+	dn  9,  8,  8,  8 ; JANINE
 	dn 13,  8, 12,  8 ; COOLTRAINERM
 	dn  7, 12, 12,  8 ; COOLTRAINERF
 	dn  6,  9, 12,  8 ; BEAUTY
@@ -36,7 +36,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; GENTLEMAN
 	dn  9,  8,  8,  8 ; SKIER
 	dn  6,  8,  8,  8 ; TEACHER
-	dn 14, 12, 15, 15 ; SABRINA
+	dn  7, 13,  8,  7 ; SABRINA
 	dn  9,  8,  8,  8 ; BUG_CATCHER
 	dn  9,  8,  8,  8 ; FISHER
 	dn  9,  8,  8,  8 ; SWIMMERM
@@ -47,7 +47,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; GUITARIST
 	dn 10,  8,  8,  8 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
-	dn 14, 14, 15, 15 ; BLAINE
+	dn  9,  8,  8,  8 ; BLAINE
 	dn  9,  8,  8,  8 ; BURGLAR
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
@@ -56,7 +56,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn 13, 13, 12, 12 ; EXECUTIVEF
+	dn  7, 14, 10,  8 ; EXECUTIVEF
 	dn  9,  8,  8,  8 ; SAGE
 	dn  7,  8,  8,  8 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
@@ -64,17 +64,10 @@ TrainerClassDVs:
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
-	dn 14, 13, 15, 15 ; RED
-	dn 14, 13, 15, 15 ; BLUE
+	dn 15, 15, 15, 15 ; RED
+	dn 15, 15, 15, 15 ; BLUE
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
-	dn 11, 13, 14, 12 ; MYSTICALMAN
-	dn 12, 13, 14, 14 ; TEAM_ROCKET
-	dn 14, 15, 14, 13 ; GIOVANNI
-	dn 13, 12, 15, 15 ; AGATHA
-	dn 14, 13, 13, 15 ; LORELEI
-	dn 12, 13, 15, 15 ; OAK
-	dn 13, 10, 10, 10 ; PROTON
-	dn 13, 14, 10, 11 ; PETREL
-	dn 11, 10,  9, 11 ; ELDER
+	dn  9,  8,  8,  8 ; MYSTICALMAN
+	dn 13, 14, 14, 13 ; TEAM_ROCKET
 	assert_table_length NUM_TRAINER_CLASSES

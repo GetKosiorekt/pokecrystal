@@ -160,7 +160,7 @@ CyndaquilPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
 	waitbutton
@@ -190,7 +190,7 @@ TotodilePokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic TOTODILE
 	cry TOTODILE
 	waitbutton
@@ -218,7 +218,7 @@ ChikoritaPokeBallScript:
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
-	reanchormap
+	refreshscreen
 	pokepic CHIKORITA
 	cry CHIKORITA
 	waitbutton
@@ -275,7 +275,6 @@ ElmDirectionsScript:
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POTION
 	setmapscene NEW_BARK_TOWN, SCENE_NEWBARKTOWN_NOOP
-	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_GUIDE_GENT
 	end
 
 ElmDescribesMrPokemonScript:
@@ -344,10 +343,6 @@ ElmAfterTheftScript:
 	clearevent EVENT_ROUTE_30_YOUNGSTER_JOEY
 	setevent EVENT_ROUTE_30_BATTLE
 	writetext ElmAfterTheftText6
-	promptbutton
-	verbosegiveitem EXP_SHARE
-	playsound SFX_KEY_ITEM
-	writetext ElmAfterTheftText7
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
@@ -385,7 +380,7 @@ ShowElmTogepiScript:
 ElmGiveEverstoneScript:
 	writetext ElmGiveEverstoneText1
 	promptbutton
-	verbosegiveitem EVERSTONE
+	verbosegiveitem TM_RETURN
 	iffalse ElmScript_NoRoomForEverstone
 	writetext ElmGiveEverstoneText2
 	waitbutton
@@ -464,7 +459,6 @@ AideScript_WalkPotion1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
-	scall AideScript_GivePocketPC
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft1
 	end
 
@@ -472,7 +466,6 @@ AideScript_WalkPotion2:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight2
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
-	scall AideScript_GivePocketPC
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft2
 	end
 
@@ -482,16 +475,6 @@ AideScript_GivePotion:
 	promptbutton
 	verbosegiveitem POTION
 	writetext AideText_AlwaysBusy
-	waitbutton
-	closetext
-	end
-	
-AideScript_GivePocketPC:
-	opentext
-	writetext AideText_GetPocketPCText
-	promptbutton
-	giveitem POCKET_PC
-	writetext AideText_PocketPCInfoText
 	waitbutton
 	closetext
 	setscene SCENE_ELMSLAB_NOOP
@@ -1034,17 +1017,9 @@ ElmAfterTheftText5:
 	line "the #MON GYM"
 	cont "challenge."
 
-	para "The GYM ideal for"
-	line "your first battle"
-	cont "would be the one"
-	cont "in AZALEA TOWN."
-	
-	para "But before that"
-	line "it would be wise"
-	cont "for you to go to"
-	cont "VIOLET CITY and"
-	cont "test your skill"
-	cont "in SPROUT TOWER."
+	para "The closest GYM"
+	line "would be the one"
+	cont "in VIOLET CITY."
 	done
 
 ElmAfterTheftText6:
@@ -1054,39 +1029,10 @@ ElmAfterTheftText6:
 	para "championship will"
 	line "be a long one."
 
-	para "I would like to"
-	line "help you and your"
-	cont "#MON reach"
-	cont "their maximum"
-	cont "potential by"
-	cont "giving you this."
-	done 
-	
-ElmAfterTheftText7:
-    text "This is the"
-	line "newest model of"
-	cont "EXP. SHARE."
-	
-	para "When turned on it"
-	line "grants all of"
-	cont "your #MON"
-	cont "experience."
-	
-	para "It doesn't matter"
-	line "if they take part"
-	cont "in battle or not,"
-	cont "so it's a fast"
-	cont "way to develop"
-	cont "all of your team"
-	cont "members."
-	
-	para "…<PLAY_G>."
-
-    para "Before you leave"
-	line "make sure that"
-	cont "you talk to"
-	cont "your mom."
-	done 
+	para "Before you leave,"
+	line "make sure that you"
+	cont "talk to your mom."
+	done
 
 ElmStudyingEggText:
 	text "ELM: Don't give"
@@ -1162,16 +1108,19 @@ ElmGiveEverstoneText1:
 
 ElmGiveEverstoneText2:
 	text "This is the"
-	line "EXP. Share."
+	line "TM RETURN."
 	
-	para "When turned on it"
-	line "grants all of your"
-	cont "#MON"
-	cont "experience."
+	para "It gets stronger"
+	line "the more your"
+	cont "#MON like you."
 	
-	para "It should be of"
-	line "great help with"
-	cont "your training!"
+	para "They're already"
+	line "attached to"
+	cont "you, <PLAY_G>."
+	
+	para "I think you'll"
+	line "be able to use"
+	cont "it well!"
 	done
 
 ElmText_CallYou:
@@ -1414,18 +1363,6 @@ ElmsLabPCText:
 
 	para "…It says on the"
 	line "screen…"
-	done
-	
-AideText_GetPocketPCText:
-	text "Oh, I have this"
-	line "for you too."
-
-	para "It's a Pocket PC!"
-	done
-	
-AideText_PocketPCInfoText:
-	text "Use this to manage"
-	line "your party."
 	done
 
 ElmsLab_MapEvents:

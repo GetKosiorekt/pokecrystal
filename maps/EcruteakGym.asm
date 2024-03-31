@@ -48,7 +48,6 @@ EcruteakGymMortyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM30_SHADOW_BALL
 	iftrue .GotShadowBall
-	loadmem wLevelCap, 41
 	setevent EVENT_BEAT_SAGE_JEFFREY
 	setevent EVENT_BEAT_SAGE_PING
 	setevent EVENT_BEAT_MEDIUM_MARTHA
@@ -86,30 +85,11 @@ EcruteakGymMortyScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet 
     writetext MortyRematchAcceptText
     waitbutton
     closetext
     winlosstext MortyRematchLossText, 0
     loadtrainer MORTY, MORTY2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_MORTY
-    opentext
-    writetext MortyRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    writetext MortyRematchAcceptText
-	waitbutton
-    closetext
-	winlosstext MortyRematchLossText, 0
-	loadtrainer MORTY, MORTY3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle
@@ -141,7 +121,7 @@ EcruteakGymClosed:
 	follow PLAYER, ECRUTEAKGYM_GRAMPS
 	applymovement PLAYER, EcruteakGymPlayerSlowStepDownMovement
 	stopfollow
-	special FadeOutToWhite
+	special FadeOutPalettes
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	warp ECRUTEAK_CITY, 6, 27
@@ -284,12 +264,11 @@ Text_ReceivedFogBadge:
 	done
 
 MortyText_FogBadgeSpeech:
-	text "With FOGBADGE"
-	line "#MON that"
-	cont "know SURF will"
+	text "With FOGBADGE #MON"
+	line "that know SURF will"
 
-	para "be able to use it"
-	line "at anytime."
+	para "be able to use that"
+	line "move anytime."
 
 	para "I want you to have"
 	line "this too."

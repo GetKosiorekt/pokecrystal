@@ -36,7 +36,6 @@ MahoganyGymPryceScript:
 .FightDone:
 	checkevent EVENT_GOT_TM16_ICY_WIND
 	iftrue .PryceScriptDefeat
-	loadmem wLevelCap, 65
 	setevent EVENT_BEAT_SKIER_ROXANNE
 	setevent EVENT_BEAT_SKIER_CLARISSA
 	setevent EVENT_BEAT_BOARDER_RONALD
@@ -75,30 +74,11 @@ MahoganyGymPryceScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet
     writetext PryceRematchAcceptText
     waitbutton
     closetext
     winlosstext PryceRematchLossText, 0
     loadtrainer PRYCE, PRYCE2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_PRYCE
-    opentext
-    writetext PryceRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    writetext PryceRematchAcceptText
-	waitbutton
-    closetext
-    winlosstext PryceRematchLossText, 0
-	loadtrainer PRYCE, PRYCE3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle

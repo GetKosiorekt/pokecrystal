@@ -36,7 +36,6 @@ AzaleaGymBugsyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM49_FURY_CUTTER
 	iftrue .GotFuryCutter
-	loadmem wLevelCap, 29
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
 	setevent EVENT_BEAT_BUG_CATCHER_BENNY
 	setevent EVENT_BEAT_BUG_CATCHER_AL
@@ -75,30 +74,11 @@ AzaleaGymBugsyScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet
     writetext BugsyRematchAcceptText
     waitbutton
     closetext
     winlosstext BugsyRematchLossText, 0
     loadtrainer BUGSY, BUGSY2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_BUGSY
-    opentext
-    writetext BugsyRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    writetext BugsyRematchAcceptText
-	waitbutton
-    closetext
-	winlosstext BugsyRematchLossText, 0
-	loadtrainer BUGSY, BUGSY3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle
@@ -261,13 +241,6 @@ BugsyText_FuryCutterSpeech:
 	para "The longer your"
 	line "battle goes, the"
 	cont "better it gets."
-	
-	para "Don't be shy to"
-	line "use it!"
-	
-	para "A TM can be used"
-	line "as many times as"
-	cont "you want!"
 
 	para "Isn't that great?"
 	line "I discovered it!"
@@ -416,9 +389,7 @@ TwinsAmyandmay2AfterBattleText:
 	done
 
 AzaleaGymGuideText:
-	text "Hey! I'm no train-"
-	line "er but I can give"
-	cont "some advice!"
+	text "Yo, challenger!"
 
 	para "BUGSY's young, but"
 	line "his knowledge of"

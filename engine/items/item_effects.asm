@@ -38,7 +38,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
-	dw PocketPCEffect      ; POCKET_PC
+	dw NoEffect            ; ITEM_19
 	dw VitaminEffect       ; HP_UP
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
@@ -55,8 +55,8 @@ ItemEffects:
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
 	dw GuardSpecEffect     ; GUARD_SPEC
-	dw NoEffect            ; SUPER_REPEL
-	dw NoEffect            ; MAX_REPEL
+	dw SuperRepelEffect    ; SUPER_REPEL
+	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT
 	dw NoEffect            ; ITEM_2D
 	dw RestoreHPEffect     ; FRESH_WATER
@@ -1295,10 +1295,8 @@ RareCandyEffect:
 	ld a, MON_LEVEL
 	call GetPartyParamLocation
 
-    ld a, [wLevelCap]
-	ld b, a
 	ld a, [hl]
-	cp b
+	cp MAX_LEVEL
 	jp nc, NoEffectMessage
 
 	inc a
@@ -1737,9 +1735,9 @@ ChooseMonToUseItemOn:
 	farcall InitPartyMenuWithCancel
 	farcall InitPartyMenuGFX
 	farcall WritePartyMenuTilemap
-	farcall PlacePartyMenuText
+	farcall PrintPartyMenuText
 	call WaitBGMap
-	call SetDefaultBGPAndOBP
+	call SetPalettes
 	call DelayFrame
 	farcall PartyMenuSelect
 	ret
@@ -1756,7 +1754,7 @@ ItemActionText:
 	farcall WritePartyMenuTilemap
 	farcall PrintPartyMenuActionText
 	call WaitBGMap
-	call SetDefaultBGPAndOBP
+	call SetPalettes
 	call DelayFrame
 	pop bc
 	pop de
@@ -2070,30 +2068,31 @@ EscapeRopeEffect:
 	call z, UseDisposableItem
 	ret
 
- RepelEffect:
+SuperRepelEffect:
+	ld b, 200
+	jr UseRepel
 
-	ld b, 1
+MaxRepelEffect:
+	ld b, 250
+	jr UseRepel
+
+RepelEffect:
+	ld b, 100
+
+UseRepel:
 	ld a, [wRepelEffect]
 	and a
+	ld hl, RepelUsedEarlierIsStillInEffectText
+	jp nz, PrintText
 
-	jr nz, .RepelisOn
 	ld a, b
 	ld [wRepelEffect], a
-	ld hl, RepelTurnOnText
-	jp PrintText
+	ld a, [wCurItem]
+	ld [wRepelType], a
+	jp UseItemText
 
-.RepelisOn
-	xor a
-	ld [wRepelEffect], a
-	ld hl, RepelTurnOffText
-	jp PrintText
-
-RepelTurnOffText:
-	text_far _RepelTurnOffText
-	text_end
-	
-RepelTurnOnText:
-	text_far _RepelTurnOnText
+RepelUsedEarlierIsStillInEffectText:
+	text_far _RepelUsedEarlierIsStillInEffectText
 	text_end
 
 XAccuracyEffect:
@@ -2292,10 +2291,6 @@ UseRod:
 
 ItemfinderEffect:
 	farcall ItemFinder
-	ret
-	
-PocketPCEffect:
-	farcall PocketPCFunction
 	ret
 
 RestorePPEffect:

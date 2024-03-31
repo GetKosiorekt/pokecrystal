@@ -18,7 +18,7 @@ TrainerPicPointers::
 	dba_pic BrunoPic
 	dba_pic KarenPic
 	dba_pic KogaPic
-	dba_pic LancePic
+	dba_pic ChampionPic
 	dba_pic BrockPic
 	dba_pic MistyPic
 	dba_pic LtSurgePic
@@ -71,11 +71,4 @@ TrainerPicPointers::
 	dba_pic GruntfPic
 	dba_pic MysticalmanPic
 	dba_pic TeamRocketPic
-	dba_pic GiovanniPic
-	dba_pic AgathaPic
-	dba_pic LoreleiPic
-	dba_pic OakPic
-	dba_pic ProtonPic
-	dba_pic PetrelPic
-	dba_pic ElderPic
 	assert_table_length NUM_TRAINER_CLASSES

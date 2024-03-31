@@ -31,7 +31,7 @@ FishGroups:
 .Shore_Good:
 	db  35 percent,     MAGIKARP,   25
 	db  70 percent,     TENTACOOL,  25
-	db  90 percent + 1, CORSOLA,    25
+	db  90 percent + 1, CORSOLA,     25
 	db 100 percent,     time_group 0
 .Shore_Super:
 	db  40 percent,     GYARADOS,   45

@@ -53,7 +53,6 @@ CianwoodGymChuckScript:
 .FightDone:
 	checkevent EVENT_GOT_TM01_DYNAMICPUNCH
 	iftrue .AlreadyGotTM
-	loadmem wLevelCap, 44
 	setevent EVENT_BEAT_BLACKBELT_YOSHI
 	setevent EVENT_BEAT_BLACKBELT_LAO
 	setevent EVENT_BEAT_BLACKBELT_NOB
@@ -91,27 +90,11 @@ CianwoodGymChuckScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet
     writetext ChuckRematchAcceptText
     waitbutton
     closetext
     winlosstext ChuckRematchLossText, 0
     loadtrainer CHUCK, CHUCK2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_CHUCK
-    opentext
-    writetext ChuckRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    winlosstext ChuckRematchLossText, 0
-	loadtrainer CHUCK, CHUCK3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle

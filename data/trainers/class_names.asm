@@ -69,11 +69,4 @@ TrainerClassNames::
 	li "TEAM ROCKET"
 	li "MYSTICALMAN"
 	li "TEAM ROCKET"
-	li "BOSS"
-	li "<PKMN> TRAINER"
-	li "<PKMN> TRAINER"
-	li "PROFESSOR"
-	li "TEAM ROCKET"
-	li "TEAM ROCKET"
-	li "ELDER"
 	assert_list_length NUM_TRAINER_CLASSES

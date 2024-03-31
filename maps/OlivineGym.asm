@@ -10,9 +10,6 @@ OlivineGym_MapScripts:
 OlivineGymJasmineScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_CHUCK
-	iffalse .LessThan5Badges
-; player has beaten Chuck
 	checkevent EVENT_BEAT_JASMINE
 	iftrue .FightDone
 	writetext Jasmine_SteelTypeIntro
@@ -34,7 +31,6 @@ OlivineGymJasmineScript:
 .FightDone:
 	checkevent EVENT_GOT_TM23_IRON_TAIL
 	iftrue .GotIronTail
-	loadmem wLevelCap, 53
 	writetext Jasmine_BadgeSpeech
 	promptbutton
 	verbosegiveitem TM_IRON_TAIL
@@ -44,12 +40,6 @@ OlivineGymJasmineScript:
 	waitbutton
 	closetext
 	end
-
-.LessThan5Badges:
-	writetext PlayerNotReady
-	waitbutton
-	closetext
-	end 
 
 .GotIronTail:
     checkevent EVENT_BEAT_CHAMPION_LANCE
@@ -74,27 +64,11 @@ OlivineGymJasmineScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet
     writetext JasmineRematchAcceptText
     waitbutton
     closetext
     winlosstext JasmineRematchLossText, 0
     loadtrainer JASMINE, JASMINE2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_JASMINE
-    opentext
-    writetext JasmineRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    winlosstext JasmineRematchLossText, 0
-	loadtrainer JASMINE, JASMINE3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle
@@ -149,19 +123,6 @@ OlivineGymStatue:
 .Beaten:
 	gettrainername STRING_BUFFER_4, JASMINE, JASMINE1
 	jumpstd GymStatue2Script
-	
-PlayerNotReady:
-    text "Um… excuse me."
-	
-	para "You only have" 
-	line "four badges."
-	
-	para "I'm afraid I cannot"
-	line "accept your"
-	cont "challenge until"
-	cont "you have at"
-	cont "least five."
-	done 
 
 Jasmine_SteelTypeIntro:
 	text "…Thank you for"

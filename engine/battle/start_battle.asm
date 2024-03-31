@@ -78,54 +78,36 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jp nz, .done
+	jr nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
-	jp .done
+	jr .done
 
 .kantowild
 	ld de, MUSIC_KANTO_WILD_BATTLE
-	jp .done
+	jr .done
 
 .trainermusic
 	ld de, MUSIC_CHAMPION_BATTLE
-	cp LANCE
-	jp z, .done
+	cp CHAMPION
+	jr z, .done
 	cp RED
-	jp z, .done
-    cp CAL
-    jp z, .done  	
+	jr z, .done
 
 	ld de, MUSIC_ROCKET_BATTLE
 	cp GRUNTM
-	jp z, .done
+	jr z, .done
 	cp GRUNTF
-	jp z, .done
-	cp PETREL
+	jr z, .done
+	cp EXECUTIVEM
 	jr z, .done
     cp EXECUTIVEF
 	jr z, .done
 	cp SCIENTIST
 	jr z, .done
-	cp TEAM_ROCKET
-	jr z, .done
-	cp PROTON
-	jr z, .done 
 	
 	ld de, MUSIC_MAXIE_ARCHIE_BATTLE
-	cp GIOVANNI
+	cp TEAM_ROCKET
 	jr z, .done
-	
-	ld de, MUSIC_FINAL_BATTLE
-	cp OAK
-	jr z, .done 
-	cp BLUE
-	jr z, .done 
-	
-	ld de, MUSIC_GYM_LEADER_BATTLE
-	cp AGATHA
-	jr z, .done 
-	cp LORELEI
-	jr z, .done 
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
 	farcall IsKantoGymLeader
@@ -145,9 +127,6 @@ PlayBattleMusic:
 	jr nz, .othertrainer
 
 	ld a, [wOtherTrainerID]
-	cp RIVAL2_1_CHIKORITA ; Rival in Mt. Silver
-	jr c, .done
-	ld de, MUSIC_CHAMPION_BATTLE
 	cp RIVAL2_2_CHIKORITA ; Rival in Indigo Plateau
 	jr c, .done
 	ld de, MUSIC_CHAMPION_BATTLE

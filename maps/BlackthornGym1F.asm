@@ -46,7 +46,6 @@ BlackthornGymClairScript:
 	writetext ClairText_GoToDragonsDen
 	waitbutton
 	closetext
-	loadmem wLevelCap, 75
 	setevent EVENT_BEAT_COOLTRAINERM_PAUL
 	setevent EVENT_BEAT_COOLTRAINERM_CODY
 	setevent EVENT_BEAT_COOLTRAINERM_MIKE
@@ -108,27 +107,11 @@ BlackthornGymClairScript:
     end
 	
 .DoRematch:
-    checkevent EVENT_BEAT_RED
-	iftrue .DoRematch2
-; player hasn't beaten Red yet
     writetext ClairRematchAcceptText
     waitbutton
     closetext
     winlosstext ClairRematchLossText, 0
     loadtrainer CLAIR, CLAIR2
-    loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
-    startbattle
-    reloadmapafterbattle
-    setevent EVENT_BEAT_CLAIR
-    opentext
-    writetext ClairRematchAfterText
-    waitbutton
-    closetext
-    end
-	
-.DoRematch2:
-    winlosstext ClairRematchLossText, 0
-	loadtrainer CLAIR, CLAIR3
     loadvar VAR_BATTLETYPE, BATTLETYPE_SETNOITEMS
     startbattle
     reloadmapafterbattle

@@ -18,7 +18,7 @@ BTTrainerClassGenders:
 	db MALE   ; BRUNO
 	db FEMALE ; KAREN
 	db MALE   ; KOGA
-	db MALE   ; LANCE
+	db MALE   ; CHAMPION
 	db MALE   ; BROCK
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
@@ -70,11 +70,4 @@ BTTrainerClassGenders:
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF
 	db MALE   ; TEAM_ROCKET
-	db MALE   ; GIOVANNI
-	db FEMALE ; AGATHA
-	db FEMALE ; LORELEI
-	db MALE   ; OAK
-	db MALE   ; PROTON
-	db MALE   ; PETREL
-	db MALE   ; ELDER
 	assert_table_length NUM_TRAINER_CLASSES - 1 ; exclude MYSTICALMAN

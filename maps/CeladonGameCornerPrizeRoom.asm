@@ -39,8 +39,6 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_CancelPurchaseScript
 
 .DoubleTeam:
-    checkitem TM_DOUBLE_TEAM
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_DOUBLE_TEAM
@@ -52,8 +50,6 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_purchased
 
 .Psychic:
-    checkitem TM_PSYCHIC_M
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM29_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_PSYCHIC_M
@@ -65,8 +61,6 @@ CeladonPrizeRoom_tmcounterloop:
 	sjump CeladonPrizeRoom_purchased
 
 .HyperBeam:
-    checkitem TM_HYPER_BEAM
-	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM15_COINS
 	ifequal HAVE_LESS, CeladonPrizeRoom_notenoughcoins
 	getitemname STRING_BUFFER_3, TM_HYPER_BEAM
@@ -86,11 +80,6 @@ CeladonPrizeRoom_purchased:
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext CeladonPrizeRoom_HereYouGoText
-	waitbutton
-	sjump CeladonPrizeRoom_tmcounterloop
-	
-CeladonPrizeRoom_alreadyhavetm:
-	writetext CeladonPrizeRoom_AlreadyHaveTMText
 	waitbutton
 	sjump CeladonPrizeRoom_tmcounterloop
 
@@ -215,7 +204,7 @@ CeladonGameCornerPrizeRoomPokemonVendor:
 	db 4 ; items
 	db "TYPHLOSION {d:CELADONGAMECORNERPRIZEROOM_TYPHLOSION_COINS}@"
 	db "FERALIGATR {d:CELADONGAMECORNERPRIZEROOM_FERALIGATR_COINS}@"
-	db "MEGANIUM   {d:CELADONGAMECORNERPRIZEROOM_MEGANIUM_COINS}@"
+	db "MEGANIUM  {d:CELADONGAMECORNERPRIZEROOM_MEGANIUM_COINS}@"
 	db "CANCEL@"
 
 CeladonGameCornerPrizeRoomGentlemanText:
@@ -263,11 +252,6 @@ CeladonPrizeRoom_ConfirmPurchaseText:
 
 CeladonPrizeRoom_HereYouGoText:
 	text "Here you go!"
-	done
-	
-CeladonPrizeRoom_AlreadyHaveTMText:
-	text "You already have"
-	line "that TM."
 	done
 
 CeladonPrizeRoom_NotEnoughCoinsText:

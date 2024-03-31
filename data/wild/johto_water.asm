@@ -95,9 +95,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_ROOM_2
 	db 2 percent ; encounter rate
-	db 81, SEAKING
-	db 81, GOLDUCK
-	db 81, GYARADOS
+	db 35, SEAKING
+	db 35, GOLDUCK
+	db 35, GOLDEEN
 	end_water_wildmons
 
 	def_water_wildmons DARK_CAVE_VIOLET_ENTRANCE
@@ -116,9 +116,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons DRAGONS_DEN_B1F
 	db 4 percent ; encounter rate
-	db 55, GYARADOS
-	db 55, SEADRA
-	db 55, DRAGONAIR
+	db 35, GYARADOS
+	db 35, SEADRA
+	db 35, DRAGONAIR
 	end_water_wildmons
 
 	def_water_wildmons OLIVINE_PORT
@@ -263,9 +263,9 @@ JohtoWaterWildMons:
 
 	def_water_wildmons SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate
-	db 80, POLITOED
-	db 80, KINGLER
-	db 80, KINGDRA
+	db 35, POLIWHIRL
+	db 40, POLIWHIRL
+	db 35, POLIWAG
 	end_water_wildmons
 
 	db -1 ; end
